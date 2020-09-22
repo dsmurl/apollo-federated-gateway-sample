@@ -1,29 +1,12 @@
 const { ApolloServer, gql } = require("apollo-server");
 const { buildFederatedSchema } = require("@apollo/federation");
+const PersonTypeDefs = require("./schema-person");
 
 const persons = [
   { id: "1", name: "Sam", car: { id: "3" } },
   { id: "2", name: "Ted", car: { id: "2" } },
   { id: "3", name: "Nic", car: { id: "1" } },
 ];
-
-const typeDefs = gql`
-  type Person {
-    id: ID!
-    name: String
-    car: Car
-  }
-
-  extend type Car @key(fields: "id") {
-    id: ID! @external
-  }
-
-  type Query {
-    getPersons: [Person]
-    getPersonById(id: ID!): Person
-    me: Person
-  }
-`;
 
 const resolvers = {
   Query: {
@@ -45,7 +28,7 @@ const resolvers = {
 };
 
 const server = new ApolloServer({
-  schema: buildFederatedSchema([{ typeDefs, resolvers }]),
+  schema: buildFederatedSchema([{ typeDefs: PersonTypeDefs, resolvers }]),
 });
 
 server.listen(4002).then(({ url }) => {

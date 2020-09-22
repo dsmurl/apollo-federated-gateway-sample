@@ -6,15 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently -k yarn:start:*",
-    "start:car-service": "node service-car.js",
-    "start:person-service": "node service-person.js",
-    "start:gateway": "node index.js"
+    "start:service-car": "node service-car.js",
+    "start:service-person": "node service-person.js",
+    "start:gateway": "node apollo-gateway.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@apollo/gateway": "^0.20.0",
-    "apollo-server": "^2.17.0"
+    "apollo-server": "^2.17.0",
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {
     "concurrently": "^5.3.0"
