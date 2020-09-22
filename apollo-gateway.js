@@ -1,4 +1,5 @@
-// Designed with help from:  Mission Brief - https://www.youtube.com/watch?v=IOPiOr5fqYE
+// Designed ApolloStudio intergration with help from:  https://www.youtube.com/watch?v=IOPiOr5fqYE
+// Designed federated services and gateway with this tutorial:  https://www.youtube.com/watch?v=v_1bn2sHdk4
 
 const { ApolloServer } = require("apollo-server");
 const { ApolloGateway, RemoteGraphQLDataSource } = require("@apollo/gateway");
