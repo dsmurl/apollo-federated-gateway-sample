@@ -1,3 +1,5 @@
+// Designed with help from:  Mission Brief - https://www.youtube.com/watch?v=IOPiOr5fqYE
+
 const { ApolloServer } = require("apollo-server");
 const { ApolloGateway, RemoteGraphQLDataSource } = require("@apollo/gateway");
 
